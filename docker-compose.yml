@@ -1,0 +1,11 @@
+version: "3"
+services:
+  wiki:
+    build:
+      context: .
+    image: si9ma/tiddlywiki:1.0
+    command: <username> <passwd> https://github.com/si9ma/Wiki.git <git_email> <git_name>
+    ports:
+     - "8080:80"
+    volumes:
+     - ./script:/script
