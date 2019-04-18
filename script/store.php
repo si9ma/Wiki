@@ -4,7 +4,7 @@
 Edit these lines according to your need
 ***/
 //{{{
-$AUTHENTICATE_USER = false;	// true | false
+$AUTHENTICATE_USER = true;	// true | false
 $USERS = array('Username' => 'Password');
 $DEBUG = false;				// true | false
 $CLEAN_BACKUP = true; 		// during backuping a file, remove overmuch backups
