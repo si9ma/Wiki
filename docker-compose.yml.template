@@ -9,3 +9,8 @@ services:
      - "8080:80"
     volumes:
      - ./script:/script
+     - data:/var/www/html
+
+volumes:
+    data:
+
