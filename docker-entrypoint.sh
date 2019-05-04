@@ -21,7 +21,7 @@ repo="$3"
 [ "$repo" = "" ] && repo="https://github.com/si9ma/Wiki.git"
 git_repo=`echo $repo | sed 's/https:\/\/github.com\//git@github.com:/g'`
 rm -rf Wiki # remove Wiki git repo
-sudo -u www-data git clone $repo -o Wiki && cd Wiki && git remote rename Wiki origin && git remote set-url origin $git_repo
+git clone $repo -o Wiki && cd Wiki && git remote rename Wiki origin && git remote set-url origin $git_repo
 
 # auto commiter
 email="$4"
