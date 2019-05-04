@@ -26,8 +26,8 @@ sudo -u www-data git clone $repo -o Wiki && cd Wiki && git remote rename Wiki or
 # auto commiter
 email="$4"
 name="$5"
-sudo -u www-data ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N "" && cat ~/.ssh/id_rsa.pub # copy public key to github
-sudo -u www-data ssh-keyscan github.com >> ~/.ssh/known_hosts
+sudo -u www-data bash -c 'ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N "" && cat ~/.ssh/id_rsa.pub' # copy public key to github
+sudo -u www-data bash -c 'ssh-keyscan github.com >> ~/.ssh/known_hosts'
 git config user.email "$email"
 git config user.name "$name"
 # # inotify events is MOVE_SELF when store.php store index.html 
