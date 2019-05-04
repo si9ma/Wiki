@@ -220,6 +220,13 @@ function replaceJSContentIn($content) {
 		return $content;
 }
 
+function git_push($path) {
+	chdir($path);
+	exec("git pull");  
+	exec("git add index.html");  
+	exec("git commit -m 'autocommit on change' index.html");
+}
+
 // Check if file_uploads is active in php config
 if (ini_get('file_uploads') != '1') {
    echo "Error : File upload is not active in php.ini\n";
@@ -326,6 +333,7 @@ if (move_uploaded_file($_FILES['userfile']['tmp_name'], $destfile)) {
 	}
 	if (!$backupError) {
 		echo "0 - File successfully loaded in " .$destfile. "\n";
+		git_push($uploadDir);
 	} else {
 		echo "BackupError : $backupError - File successfully loaded in " .$destfile. "\n";
 	}

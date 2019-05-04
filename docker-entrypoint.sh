@@ -30,17 +30,17 @@ ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N "" && cat ~/.ssh/id_rsa.pub # c
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 git config user.email "$email"
 git config user.name "$name"
-# inotify events is MOVE_SELF when store.php store index.html 
-# Analysis use inotifywait -m index.html
-while inotifywait -e CLOSE index.html
-    # wait file exist
-    until [ -f index.html ]
-    do
-        echo "wait index.html"
-        sleep 1
-    done
-    do git commit -m 'autocommit on change' index.html && git pull && git push origin
-done &
+# # inotify events is MOVE_SELF when store.php store index.html 
+# # Analysis use inotifywait -m index.html
+# while inotifywait -e CLOSE index.html
+#     # wait file exist
+#     until [ -f index.html ]
+#     do
+#         echo "wait index.html"
+#         sleep 1
+#     done
+#     do git commit -m 'autocommit on change' index.html && git pull && git push origin
+# done &
 
 # start apache
 docker-php-entrypoint apache2-foreground
