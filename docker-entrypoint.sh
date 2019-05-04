@@ -32,8 +32,7 @@ chown -R www-data:www-data /var/www/
 git_repo=`echo $repo | sed 's/https:\/\/github.com\//git@github.com:/g'`
 
 # run as user www-data
-[ ! -d "Wiki" ] && sudo -u www-data bash -c "git clone $repo -o Wiki && \ 
-    cd Wiki && git remote rename Wiki origin && git remote set-url origin $git_repo" # clone when repo don't exist
+[ ! -d "Wiki" ] && sudo -u www-data bash -c "git clone $repo -o Wiki && cd Wiki && git remote rename Wiki origin && git remote set-url origin $git_repo" # clone when repo don't exist
 cd Wiki
 sudo -u www-data bash -c "git config user.email $email"
 sudo -u www-data bash -c "git config user.name $name"
