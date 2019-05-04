@@ -32,7 +32,7 @@ git config user.email "$email"
 git config user.name "$name"
 # inotify events is MOVE_SELF when store.php store index.html 
 # Analysis use inotifywait -m index.html
-while inotifywait -e MOVE_SELF index.html
+while inotifywait -e CLOSE index.html
     # wait file exist
     until [ -f index.html ]
     do
