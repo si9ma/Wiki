@@ -36,8 +36,8 @@ rm -rf Wiki # remove Wiki git repo
 sudo -u www-data bash -c "git clone $repo -o Wiki && cd Wiki && git remote rename Wiki origin && git remote set-url origin $git_repo" # run as user www-data
 sudo -u www-data bash -c 'ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N "" && cat ~/.ssh/id_rsa.pub' # copy public key to github
 sudo -u www-data bash -c 'ssh-keyscan github.com >> ~/.ssh/known_hosts'
-sudo -u www-data bash -c 'git config user.email "$email"'
-sudo -u www-data bash -c 'git config user.name "$name"'
+sudo -u www-data bash -c "git config user.email "$email""
+sudo -u www-data bash -c "git config user.name "$name""
 
 # start apache
 docker-php-entrypoint apache2-foreground
