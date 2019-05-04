@@ -222,9 +222,10 @@ function replaceJSContentIn($content) {
 
 function git_push($path) {
 	chdir($path);
-	exec("git pull");  
 	exec("git add index.html");  
 	exec("git commit -m 'autocommit on change' index.html");
+	exec("git pull");  
+	exec("git push");  
 }
 
 // Check if file_uploads is active in php config
