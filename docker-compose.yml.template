@@ -1,6 +1,7 @@
 version: "3"
 services:
   wiki:
+    container_name: wiki
     build:
       context: .
     image: si9ma/tiddlywiki:1.0
