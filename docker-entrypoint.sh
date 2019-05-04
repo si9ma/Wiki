@@ -21,13 +21,13 @@ repo="$3"
 [ "$repo" = "" ] && repo="https://github.com/si9ma/Wiki.git"
 git_repo=`echo $repo | sed 's/https:\/\/github.com\//git@github.com:/g'`
 rm -rf Wiki # remove Wiki git repo
-git clone $repo -o Wiki && cd Wiki && git remote rename Wiki origin && git remote set-url origin $git_repo
+sudo -u www-data git clone $repo -o Wiki && cd Wiki && git remote rename Wiki origin && git remote set-url origin $git_repo
 
 # auto commiter
 email="$4"
 name="$5"
-ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N "" && cat ~/.ssh/id_rsa.pub # copy public key to github
-ssh-keyscan github.com >> ~/.ssh/known_hosts
+sudo -u www-data ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N "" && cat ~/.ssh/id_rsa.pub # copy public key to github
+sudo -u www-data ssh-keyscan github.com >> ~/.ssh/known_hosts
 git config user.email "$email"
 git config user.name "$name"
 # # inotify events is MOVE_SELF when store.php store index.html 
