@@ -10,6 +10,10 @@ My Personal Wiki - Powered by [TiddlyWiki](https://tiddlywiki.com/)
 - change username and password for tiddlywiki save
 - change git name and email
 
+### change environment
+
+- [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion)
+
 ### run docker
 
 ```bash
@@ -29,3 +33,7 @@ docker-compose logs
 
 - [TiddlyWiki Home](https://tiddlywiki.com/)
 - [TiddlyWiki Saving on a PHP Server](https://tiddlywiki.com/static/Saving%2520on%2520a%2520PHP%2520Server.html)
+
+### use a nginx proxy
+
+- [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion)
