@@ -2,7 +2,7 @@
 
 My Personal Wiki - Powered by [TiddlyWiki](https://tiddlywiki.com/)
 
-## Usage
+<!-- ## Usage
 
 ### change docker-compose.yml
 
@@ -36,4 +36,4 @@ docker-compose logs
 
 ### use a nginx proxy
 
-- [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion)
+- [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) -->
